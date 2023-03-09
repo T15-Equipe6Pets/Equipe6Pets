@@ -18,4 +18,23 @@ export const GlobalStyle = createGlobalStyle`
 
         --inter-font: font-family: 'Inter', sans-serif;
     }
+button {
+  cursor: pointer;
+  border: 0;
+  background:transparent;
+}
+ul, ol, li{
+  list-style:none
+} 
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  background-color:#000000;
+  font-family: "Inter";
+  font-style: normal;
+}
+
 `;
