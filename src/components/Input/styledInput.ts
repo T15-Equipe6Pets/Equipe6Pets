@@ -5,7 +5,7 @@ export const StyledFieldset = styled.fieldset`
   display: flex;
   flex-direction: column;
   label {
-    color: var(--Grey-05);
+    color: var(--grey-0);
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
@@ -20,14 +20,14 @@ export const StyledFieldset = styled.fieldset`
     border: none;
     border-radius: 4px;
     height: 38px;
-    background-color: var(--Grey-03);
-    color: var(--Grey-04);
+    background-color: var(--grey-2);
+    color: var(--grey-4);
     width: 90%;
     margin: 0 auto;
     padding-left: 16px;
   }
   .error {
-    color: var(--Color-primary-02);
+    color: var(--negative);
     flex-direction: inherit;
     width: 90%;
     margin: 0 auto;
