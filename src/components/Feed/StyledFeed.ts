@@ -2,9 +2,13 @@ import styled from "styled-components";
 
 export const StyledFeed = styled.section`
   width: 100%;
+  padding: 20px;
   background-color: var(--grey-3);
 
-  div {
+  .text__input-area {
+    max-height: 50px;
+    margin-bottom: 50px;
+
     display: flex;
     justify-content: space-between;
     textarea {
