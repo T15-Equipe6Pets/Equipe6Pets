@@ -36,6 +36,11 @@ ul, ol, li{
   padding:0;
   box-sizing:border-box;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 body{
   background-color:#000000;
   font-family: "Inter";

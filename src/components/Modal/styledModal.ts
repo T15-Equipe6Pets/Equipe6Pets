@@ -11,13 +11,32 @@ export const StyledCartModalBox = styled.div`
   left: 0;
   background: rgba(51, 51, 51, 0.5);
   gap: 10px;
-  div {
+  .deleteBt {
+    width: 70px;
+  }
+  header {
+    background-color: var(--grey-2);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 4px 4px 0 0;
+  }
+  .containerBt {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  > div {
     background-color: var(--grey-3);
     width: 300px;
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    padding: 15px;
 
     > button {
       margin-top: 20px;
@@ -33,7 +52,7 @@ export const StyledCartModalBox = styled.div`
       }
 
       button {
-        color: var(--grey-2);
+        color: var(--grey-1);
         font-size: 18px;
       }
     }

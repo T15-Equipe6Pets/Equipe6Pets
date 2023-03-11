@@ -17,17 +17,17 @@ export const ModalAddPet = () => {
           </header>
           <Input
             labelText="Nome"
-            placeHolder="Digite aqui seu nome"
+            placeHolder="Digite nome do seu pet aqui"
             type="text"
           />
           <Input
             labelText="Cidade"
-            placeHolder="Digite aqui seu nome"
+            placeHolder="Digite asua cidade"
             type="text"
           />
           <Input
             labelText="Telefone"
-            placeHolder="Digite aqui seu nome"
+            placeHolder="Digite seu contato"
             type="number"
           />
           <ThemeButton
