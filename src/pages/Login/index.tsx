@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Input } from "../../components/Input";
+import { ModalAddPet } from "../../components/Modal/ModalAddPet";
 import { TextTag } from "../../components/TextType/TextType";
 import { ThemeButton } from "../../components/ThemeButton/StyledButton";
 import { ThemeH1 } from "../../styles/Typography";
@@ -9,6 +10,7 @@ import { StyledContainerLogin, StyledMain } from "./styledLogin";
 export const Login = () => {
   return (
     <StyledContainerLogin>
+      <ModalAddPet />
       <header>
         <div className="header_Container">
           <ThemeH1 color="--color-primary">Equipe6Pets</ThemeH1>

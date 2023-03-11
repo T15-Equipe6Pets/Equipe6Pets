@@ -2,7 +2,7 @@ import React from "react";
 import { StyledFieldset } from "./styledInput";
 interface iProps {
   labelText?: string;
-  type?: "text" | "email" | "password";
+  type?: "text" | "email" | "password" | "number";
   placeHolder?: string;
   register?: string;
   errors?: string;
