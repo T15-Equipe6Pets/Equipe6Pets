@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
         --success: #3FE864;
         --negative: #E83F5B;
+        --negative-hover:#bf1f39;
         --white-neutral: #FFFFFF;
 
         --inter-font: font-family: 'Inter', sans-serif;
