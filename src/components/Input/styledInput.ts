@@ -9,11 +9,11 @@ export const StyledFieldset = styled.fieldset`
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 9.73988px;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 18px;
     margin-top: 22px;
+    font-size: 14px;
   }
 
   input {

@@ -17,6 +17,11 @@ export const GlobalStyle = createGlobalStyle`
         --white-neutral: #FFFFFF;
 
         --inter-font: font-family: 'Inter', sans-serif;
+
+        --font-1: 12px;
+        --font-2: 16px;
+        --font-3: 18px;
+        --font-4: 22px;
     }
 button {
   cursor: pointer;
