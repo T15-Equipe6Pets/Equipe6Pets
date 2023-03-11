@@ -1,12 +1,12 @@
 // eslint-disable-next-line import/no-unresolved
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form/dist/types';
 
-// tipagem especifica de biblioteca de react
+
 export interface IDefaultProviderProps {
   children: React.ReactNode;
 }
 
-// Interface é usado exclusivamente para definir objetos
+
 
 export interface IUser {
   _id: string;
@@ -26,7 +26,7 @@ export interface ILoginFormValues {
   password: string;
 }
 
-// interface criado depois das funções para usar as tipagens fornecidas pelo typescript
+
 export interface IUserContext {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
