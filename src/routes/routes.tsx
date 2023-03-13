@@ -9,7 +9,7 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path="/register" element={<Register />} />
-      <Route path="/shop" element={<ProtectedRoutes />}>
+      <Route path="/home" element={<ProtectedRoutes />}>
         <Route index element={<Home />} />
       </Route>
 
