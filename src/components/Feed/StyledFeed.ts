@@ -18,12 +18,13 @@ export const StyledFeed = styled.section`
     position: relative;
     button {
       position: absolute;
-      top: 78%;
+      bottom: 20px;
       right: 15px;
-      color: var(--grey-0);
+      color: var(--grey-1);
+      font-size: 18px;
     }
     button:hover {
-      color: var(--grey-1);
+      color: var(--grey-0);
     }
   }
 `;
