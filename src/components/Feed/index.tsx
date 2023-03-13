@@ -31,8 +31,6 @@ export function Feed() {
     postCreate(data);
   };
 
-  console.log(postList);
-
   return (
     <StyledFeed>
       <form onSubmit={handleSubmit(submit)} className="text__input-area">
