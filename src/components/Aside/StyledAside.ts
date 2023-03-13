@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const StyledAside = styled.aside`
+  border-radius: 16px;
   padding: 20px;
+  height: 100%;
 
   background-color: var(--grey-3);
   h1 {

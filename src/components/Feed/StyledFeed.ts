@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledFeed = styled.section`
   width: 100%;
   padding: 20px;
+  border-radius: 16px;
   background-color: var(--grey-3);
 
   .text__input-area {
