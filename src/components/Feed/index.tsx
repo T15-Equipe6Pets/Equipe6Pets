@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { PostContext } from "../../providers/PostContext/PostContext";
 import { ITextPost } from "../../providers/UserContext/@types";
 import { InputText } from "../Input";
+import { ModalDeletePost } from "../Modal/ModalDeletePost";
 // COMPONENTS
 import { PostCard } from "./PostCard";
 import { StyledFeed } from "./StyledFeed";

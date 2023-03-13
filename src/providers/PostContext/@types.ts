@@ -4,6 +4,8 @@ export interface IPostContext {
   // postRemove: (id: IRemovePostFormValues) => Promise<void>;
   postList: IPostValue[];
   postLoad: () => Promise<void>;
+  setDeletePost: React.Dispatch<React.SetStateAction<boolean>>;
+  deletePost: boolean;
 }
 
 export interface IPostValue {

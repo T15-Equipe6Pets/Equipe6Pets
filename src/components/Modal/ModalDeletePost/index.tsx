@@ -15,7 +15,6 @@ export const ModalDeletePost = () => {
             </TextTag>
             <button>x</button>
           </header>
-
           <ThemeButton
             backgroundColor="--color-primary"
             color="--grey-0"

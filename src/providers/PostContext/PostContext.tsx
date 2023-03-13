@@ -14,6 +14,7 @@ export const PostContext = createContext({} as IPostContext);
 export const PostProvider = ({ children }: IDefaultProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [postList, setPostList] = useState<IPostValue[]>([]);
+  const [deletePost, setDeletePost] = useState(false);
 
   const postLoad = async () => {
     try {
@@ -69,7 +70,9 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
   // };
 
   return (
-    <PostContext.Provider value={{ postCreate, postList, postLoad }}>
+    <PostContext.Provider
+      value={{ postCreate, postList, postLoad, deletePost, setDeletePost }}
+    >
       {children}
     </PostContext.Provider>
   );

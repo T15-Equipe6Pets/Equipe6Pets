@@ -10,19 +10,32 @@ export const StyledPostCard = styled.div`
   color: var(--white-neutral);
   font-family: "Inter";
   font-weight: lighter;
-  div {
+  .user__container {
     display: flex;
     align-items: center;
-    gap: 20px;
-    img {
-      width: 45px;
-      border-radius: 30px;
-    }
-    div {
+    justify-content: space-between;
+
+    .user__identity {
       display: flex;
-      gap: 12px;
-      span {
-        color: var(--grey-1);
+      align-items: center;
+      gap: 20px;
+      img {
+        width: 45px;
+        border-radius: 30px;
+      }
+      div {
+        display: flex;
+        gap: 12px;
+        span {
+          color: var(--grey-1);
+        }
+      }
+    }
+    .user__options {
+      button {
+        img {
+          width: 30px;
+        }
       }
     }
   }
