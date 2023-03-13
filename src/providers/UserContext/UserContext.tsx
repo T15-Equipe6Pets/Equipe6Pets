@@ -33,6 +33,7 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
       } catch (error) {
         console.log(error);
         localStorage.removeItem("@TOKEN");
+        localStorage.remove("@id");
       }
     }
   };
@@ -47,7 +48,7 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
       const response = await api.post("/users", formData);
       setUser(response.data.user);
       localStorage.setItem("@TOKEN", response.data.accessToken);
-      console.log(response.data.message);
+      localStorage.setItem("@id", response.data.user.id);
       navigate("/home");
     } catch (error) {
       console.log(error);
@@ -62,9 +63,8 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
       const response = await api.post("/login", formData);
       setUser(response.data.user);
       localStorage.setItem("@TOKEN", response.data.accessToken);
-      console.log(response.data.accessToken);
+      localStorage.setItem("@id", response.data.user.id);
       //  TOASTIFY
-      console.log("Login realizado com sucesso!!!");
       navigate("/home");
     } catch (error) {
       console.log(error);
