@@ -27,6 +27,8 @@ export function Header({ title }: iProps) {
         <button
           onClick={() => {
             navigate("/");
+            localStorage.removeItem("@TOKEN");
+            localStorage.removeItem("@id");
           }}
         >
           Sair

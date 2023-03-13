@@ -31,7 +31,7 @@ export const StyledCartModalBox = styled.div`
     margin-top: 20px;
     padding: 10px;
   }
-  > div {
+  > form {
     background-color: var(--grey-3);
     width: 300px;
     display: flex;
