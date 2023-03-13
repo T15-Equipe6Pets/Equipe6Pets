@@ -18,7 +18,9 @@ export interface IRegisterFormValues {
   name: string;
   email: string;
   password: string;
-  confPassword: string;
+  confirmPassword: string;
+  city:string;
+  contact:string;
 }
 
 export interface ILoginFormValues {
