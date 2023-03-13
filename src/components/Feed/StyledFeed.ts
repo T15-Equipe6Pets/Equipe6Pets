@@ -5,45 +5,22 @@ export const StyledFeed = styled.section`
   padding: 20px;
   border-radius: 16px;
   background-color: var(--grey-3);
-
+  .texField {
+    width: 100%;
+    color: white;
+    margin: 0 auto;
+    padding: 15px;
+  }
   .text__input-area {
-    max-height: 50px;
-    margin-bottom: 50px;
-
-    display: flex;
-    justify-content: space-between;
-    textarea {
-      max-width: 700px;
-      width: 90%;
-      padding: 10px 0 0 10px;
-
-      resize: none;
-
-      outline: none;
-      font-family: "Inter";
-
-      background-color: var(--grey-2);
-      color: var(--grey-1);
-
-      border: 1px solid var(--grey-2);
-      border-radius: 4px;
-    }
-    textarea:focus {
-      border: 1px solid var(--grey-0);
-      color: var(--grey-0);
-    }
+    position: relative;
     button {
-      width: 60px;
-
-      font-family: "Inter";
-      font-weight: 600;
-
+      position: absolute;
+      top: 78%;
+      right: 15px;
       color: var(--grey-0);
-      background-color: var(--color-primary);
-      border-radius: 4px;
     }
     button:hover {
-      background-color: var(--color-primary-focus);
+      color: var(--grey-1);
     }
   }
 `;

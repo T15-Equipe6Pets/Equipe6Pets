@@ -26,6 +26,10 @@ export interface ILoginFormValues {
   password: string;
 }
 
+export interface ITextPost {
+  text: string;
+}
+
 export interface IUserContext {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
