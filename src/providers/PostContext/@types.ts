@@ -7,8 +7,9 @@ export interface IPostContext {
 }
 
 export interface IPostValue {
-  postText: string;
+  message: string;
   id: number;
+  userId: number;
 }
 
 export interface IDefaultProviderProps {
@@ -16,8 +17,10 @@ export interface IDefaultProviderProps {
 }
 
 export interface ICreatePostFormValues {
-  message: string;
-  userId: number;
+  data: {
+    message: string;
+    userId: number;
+  };
 }
 
 export interface IEditPostFormValues {

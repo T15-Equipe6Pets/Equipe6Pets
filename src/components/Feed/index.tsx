@@ -7,6 +7,10 @@ import { InputText } from "../Input";
 import { PostCard } from "./PostCard";
 import { StyledFeed } from "./StyledFeed";
 
+interface iSubmit {
+  text: string;
+}
+
 export function Feed() {
   const { postCreate, postList, postLoad } = useContext(PostContext);
 
@@ -20,9 +24,13 @@ export function Feed() {
     formState: { errors },
   } = useForm<ITextPost>();
 
-  const submit = (formData: any) => {
-    console.log(formData);
+  const submit = (formData: iSubmit) => {
+    const userId = parseInt(localStorage.getItem("@id"));
+    const data = { message: formData.text, userId: userId };
+    postCreate(data);
   };
+
+  console.log(postList);
 
   return (
     <StyledFeed>
@@ -31,8 +39,8 @@ export function Feed() {
         <button type="submit">Postar</button>
       </form>
       <div>
-        {postList.map((element) => (
-          <PostCard />
+        {postList.map((post) => (
+          <PostCard key={post.id} message={post.message} />
         ))}
       </div>
     </StyledFeed>

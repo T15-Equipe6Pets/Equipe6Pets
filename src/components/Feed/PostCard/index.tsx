@@ -1,6 +1,10 @@
 import { StyledPostCard } from "./StyledPostCard";
 
-export function PostCard() {
+interface iPostCardPros {
+  message: string;
+}
+
+export function PostCard({ message }: iPostCardPros) {
   return (
     <StyledPostCard>
       <div>
@@ -14,7 +18,7 @@ export function PostCard() {
           <span>data</span>
         </div>
       </div>
-      <h2>Conteúdo</h2>
+      <h2>{message}</h2>
     </StyledPostCard>
   );
 }

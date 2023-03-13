@@ -25,8 +25,7 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
   };
 
   const postCreate = async (formData: ICreatePostFormValues) => {
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsImlhdCI6MTY3ODcyNjc3MCwiZXhwIjoxNjc4NzMwMzcwLCJzdWIiOiIzIn0.4eFdPIrdxxus2nrsk5jq6wRvLasEWxiHDFktZvdZpMk";
+    const token = localStorage.getItem("@TOKEN");
     try {
       setLoading(true);
       const response = await api.post("/posts", formData, {
