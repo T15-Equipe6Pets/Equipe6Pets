@@ -1,28 +1,36 @@
 export interface IPostContext {
-    lostPetCreate: (formData: ICreateLostPetFormValues) => Promise<void>
-    lostPetEdit: (formData: IEditLostPetFormValues) => Promise<void>
-    lostPetRemove: (id: IRemoveLostPetFormValues) => Promise<void>
+  lostPetCreate: (formData: ICreateLostPetFormValues) => Promise<void>;
+  lostPetList: ILostPetValue[];
+
+  modal: boolean;
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface ILostPetValue {
-    postText: string;
-    id: string
+  name: string;
+  city: string;
+  phone: string;
+  userId: number;
+  id: number;
+  image: string;
 }
 
 export interface IDefaultProviderProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export interface ICreateLostPetFormValues {
-    postText: string;
-    id: string
+  name: string;
+  city: string;
+  phone: string;
+  image: string;
 }
 
 export interface IEditLostPetFormValues {
-    postText: string;
-    id: string
+  postText: string;
+  id: string;
 }
 
 export interface IRemoveLostPetFormValues {
-    id: string
+  id: string;
 }

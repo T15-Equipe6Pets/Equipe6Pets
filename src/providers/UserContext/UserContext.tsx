@@ -32,8 +32,6 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
         navigate("/dashboard");
       } catch (error) {
         console.log(error);
-        localStorage.removeItem("@TOKEN");
-        localStorage.remove("@id");
       }
     }
   };
