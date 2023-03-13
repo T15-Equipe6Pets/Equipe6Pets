@@ -1,28 +1,30 @@
 export interface IPostContext {
-    postCreate: (formData: ICreatePostFormValues) => Promise<void>
-    postEdit: (formData: IEditPostFormValues) => Promise<void>
-    postRemove: (id: IRemovePostFormValues) => Promise<void>
+  postCreate: (formData: ICreatePostFormValues) => Promise<void>;
+  // postEdit: (formData: IEditPostFormValues) => Promise<void>;
+  // postRemove: (id: IRemovePostFormValues) => Promise<void>;
+  postList: IPostValue[];
+  postLoad: () => Promise<void>;
 }
 
 export interface IPostValue {
-    postText: string;
-    id: string
+  postText: string;
+  id: number;
 }
 
 export interface IDefaultProviderProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export interface ICreatePostFormValues {
-    postText: string;
-    id: string
+  message: string;
+  userId: number;
 }
 
 export interface IEditPostFormValues {
-    postText: string;
-    id: string
+  postText: string;
+  id: string;
 }
 
 export interface IRemovePostFormValues {
-    id: string
+  id: string;
 }

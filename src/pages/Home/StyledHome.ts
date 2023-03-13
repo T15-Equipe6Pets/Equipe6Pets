@@ -10,6 +10,10 @@ export const StyledHome = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    aside {
+      top: 20px;
+      position: sticky;
+    }
   }
   @media (max-width: 550px) {
     main {
