@@ -14,6 +14,7 @@ export interface IPostContext {
   setPetCity: React.Dispatch<React.SetStateAction<string>>;
   petPhone: string;
   setPetPhone: React.Dispatch<React.SetStateAction<string>>;
+  lostPetEdit: (formData: IEditLostPetFormValues) => Promise<void>;
 }
 
 export interface ILostPetValue {
@@ -39,8 +40,9 @@ export interface ICreateLostPetFormValues {
 }
 
 export interface IEditLostPetFormValues {
-  postText: string;
-  id: string;
+  name: string;
+  city: string;
+  phone: string;
 }
 
 export interface IRemoveLostPetFormValues {
