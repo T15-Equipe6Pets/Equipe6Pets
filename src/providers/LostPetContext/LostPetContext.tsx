@@ -60,25 +60,23 @@ export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
     }
   };
 
-  // const lostPetEdit = async (formData: IEditLostPetFormValues) => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await api.patch("/pets", formData);
+  const lostPetEdit = async (formData: IEditLostPetFormValues) => {
+    console.log(formData);
 
-  //     const newLostPet = lostPetList.map((lostPet) => {
-  //       if (formData.id === lostPet.id) {
-  //         return { ...lostPet, ...formData };
-  //       } else {
-  //         return lostPet;
-  //       }
-  //     });
-  //     setLostPetList(newLostPet);
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+    const token = localStorage.getItem("@TOKEN");
+    try {
+      const response = await api.patch(`/pets/${petId}`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      loadPetList();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const lostPetRemove = async (id: string) => {
     const token = localStorage.getItem("@TOKEN");
@@ -113,6 +111,7 @@ export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
         setPetCity,
         setPetName,
         setPetPhone,
+        lostPetEdit,
       }}
     >
       {children}
