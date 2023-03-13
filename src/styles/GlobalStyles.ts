@@ -17,6 +17,11 @@ export const GlobalStyle = createGlobalStyle`
         --white-neutral: #FFFFFF;
 
         --inter-font: font-family: 'Inter', sans-serif;
+
+        --font-1: 12px;
+        --font-2: 16px;
+        --font-3: 18px;
+        --font-4: 22px;
     }
 button {
   cursor: pointer;
@@ -30,6 +35,11 @@ ul, ol, li{
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 body{
   background-color:#000000;
