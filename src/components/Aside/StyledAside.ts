@@ -5,6 +5,8 @@ export const StyledAside = styled.aside`
   padding: 20px;
   max-height: 80vh;
   min-height: 80vh;
+  width: 300px;
+  max-width: 300px;
 
   overflow-y: auto;
 

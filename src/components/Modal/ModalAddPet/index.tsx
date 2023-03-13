@@ -18,6 +18,8 @@ export const ModalAddPet = () => {
     city: yup.string().required("Cidade onde mora obrigatória"),
     phone: yup.string().required("Contato obrigatório"),
     image: yup.string().required("Imagem do pet obrigatório"),
+    race: yup.string().required("Raça obrigatória"),
+    sex: yup.string().required("Sexo obrigatório"),
   });
 
   const {
@@ -72,6 +74,21 @@ export const ModalAddPet = () => {
             register={register("image")}
             errors={errors.image}
           />
+          <Input
+            labelText="Sexo"
+            placeHolder="Coloque o link para a foto"
+            type="text"
+            register={register("sex")}
+            errors={errors.sex}
+          />
+          <Input
+            labelText="Raça"
+            placeHolder="Coloque o link para a foto"
+            type="text"
+            register={register("race")}
+            errors={errors.race}
+          />
+
           <ThemeButton
             backgroundColor="--color-primary"
             color="--grey-0"
