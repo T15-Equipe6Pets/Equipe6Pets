@@ -56,6 +56,7 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
     }
   };
   const userLogin = async (formData: ILoginFormValues) => {
+    console.log("estou aqui");
     try {
       setLoading(true);
       const response = await api.post("/login", formData);
