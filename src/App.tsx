@@ -1,10 +1,13 @@
 import { GlobalStyle } from "./styles/GlobalStyles";
 import { AppRoutes } from "./routes/routes";
+import { UserProvider } from "./providers/UserContext/UserContext";
 function App() {
   return (
     <div className="App">
-      <GlobalStyle />
-      <AppRoutes />
+      <UserProvider>
+        <GlobalStyle />
+        <AppRoutes />
+      </UserProvider>
     </div>
   );
 }
