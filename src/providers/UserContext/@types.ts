@@ -1,12 +1,10 @@
 // eslint-disable-next-line import/no-unresolved
-import { FieldError, UseFormRegisterReturn } from 'react-hook-form/dist/types';
-
+import { FieldError, UseFormRegisterReturn } from "react-hook-form/dist/types";
+import { NavigateFunction } from "react-router-dom";
 
 export interface IDefaultProviderProps {
   children: React.ReactNode;
 }
-
-
 
 export interface IUser {
   _id: string;
@@ -19,15 +17,14 @@ export interface IRegisterFormValues {
   email: string;
   password: string;
   confirmPassword: string;
-  city:string;
-  contact:string;
+  city: string;
+  contact: string;
 }
 
 export interface ILoginFormValues {
   email: string;
   password: string;
 }
-
 
 export interface IUserContext {
   loading: boolean;
@@ -36,10 +33,11 @@ export interface IUserContext {
   userRegister: (formData: IRegisterFormValues) => Promise<void>;
   userLogin: (formData: ILoginFormValues) => Promise<void>;
   userLogout: () => void;
+  navigate: NavigateFunction;
 }
 
 export interface IInputProps {
-  type: 'text' | 'email' | 'password';
+  type: "text" | "email" | "password";
   label: string;
   register: UseFormRegisterReturn<string>;
   error?: FieldError;

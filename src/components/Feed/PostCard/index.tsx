@@ -10,8 +10,8 @@ export function PostCard() {
         />
         <div>
           <h3>Nome</h3>
-          <h3>|</h3>
-          <span>Data</span>
+          <span>•</span>
+          <span>data</span>
         </div>
       </div>
       <h2>Conteúdo</h2>

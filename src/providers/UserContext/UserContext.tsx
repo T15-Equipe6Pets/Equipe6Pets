@@ -81,7 +81,15 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
 
   return (
     <UserContext.Provider
-      value={{ loading, setLoading, user, userRegister, userLogin, userLogout }}
+      value={{
+        loading,
+        setLoading,
+        user,
+        userRegister,
+        userLogin,
+        userLogout,
+        navigate,
+      }}
     >
       {children}
     </UserContext.Provider>
