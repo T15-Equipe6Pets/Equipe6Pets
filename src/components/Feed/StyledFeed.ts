@@ -12,6 +12,9 @@ export const StyledFeed = styled.section`
     padding: 15px;
   }
   .text__input-area {
+    textarea {
+      color: var(--grey-0);
+    }
     position: relative;
     button {
       position: absolute;
