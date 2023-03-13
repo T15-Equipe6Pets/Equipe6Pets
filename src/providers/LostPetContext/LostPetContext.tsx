@@ -14,6 +14,11 @@ export const LostPetContext = createContext({} as IPostContext);
 export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState(false);
+  const [modalInfo, setModalInfo] = useState(false);
+  const [petId, setPetId] = useState(1);
+  const [petName, setPetName] = useState("");
+  const [petCity, setPetCity] = useState("");
+  const [petPhone, setPetPhone] = useState("");
   const [lostPetList, setLostPetList] = useState<ILostPetValue[]>([]);
   useEffect(() => {
     loadPetList();
@@ -44,8 +49,10 @@ export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
           },
         }
       );
+      console.log("response.data");
       setLostPetList([...lostPetList, response.data.user]);
       setModal(false);
+      window.location.reload();
     } catch (error) {
       console.log(error);
     } finally {
@@ -73,18 +80,40 @@ export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
   //   }
   // };
 
-  // const lostPetRemove = async (id: IRemoveLostPetFormValues) => {
-  //   try {
-  //     //   const response = await api.delete(`addPath`, id.id)
-
-  //     const newPosts = lostPetList.filter((lostPet) => lostPet.id !== id.id);
-  //     setLostPetList(newPosts);
-  //   } catch (error) {}
-  // };
+  const lostPetRemove = async (id: string) => {
+    const token = localStorage.getItem("@TOKEN");
+    try {
+      const response = await api.delete(`/pets/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log("response.data");
+      loadPetList();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <LostPetContext.Provider
-      value={{ lostPetCreate, modal, setModal, lostPetList }}
+      value={{
+        lostPetCreate,
+        modal,
+        setModal,
+        lostPetList,
+        modalInfo,
+        setModalInfo,
+        petId,
+        setPetId,
+        lostPetRemove,
+        petCity,
+        petName,
+        petPhone,
+        setPetCity,
+        setPetName,
+        setPetPhone,
+      }}
     >
       {children}
     </LostPetContext.Provider>
