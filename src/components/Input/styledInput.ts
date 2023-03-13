@@ -21,7 +21,7 @@ export const StyledFieldset = styled.fieldset`
     border-radius: 4px;
     height: 38px;
     background-color: var(--grey-2);
-    color: var(--grey-4);
+    color: var(--grey-0);
     width: 90%;
     margin: 0 auto;
     padding-left: 16px;

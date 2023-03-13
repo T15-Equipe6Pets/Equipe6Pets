@@ -62,7 +62,10 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
       const response = await api.post("/login", formData);
       setUser(response.data.user);
       localStorage.setItem("@TOKEN", response.data.accessToken);
+      localStorage.setItem("@id", response.data.user.id);
+
       console.log(response.data.accessToken);
+      console.log(response.data);
       //  TOASTIFY
       console.log("Login realizado com sucesso!!!");
       navigate("/home");
