@@ -19,6 +19,7 @@ export interface IRegisterFormValues {
   confirmPassword: string;
   city: string;
   contact: string;
+  image: string;
 }
 
 export interface ILoginFormValues {

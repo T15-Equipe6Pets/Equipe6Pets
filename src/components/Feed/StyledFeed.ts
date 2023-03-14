@@ -12,6 +12,7 @@ export const StyledFeed = styled.section`
     padding: 15px;
   }
   .text__input-area {
+    width: 50%;
     textarea {
       color: var(--grey-0);
     }
