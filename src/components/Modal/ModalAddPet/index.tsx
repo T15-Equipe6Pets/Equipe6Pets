@@ -61,9 +61,9 @@ export const ModalAddPet = () => {
             errors={errors.city}
           />
           <Input
-            labelText="Telefone"
+            labelText="Contato"
             placeHolder="Digite seu contato"
-            type="number"
+            type="text"
             register={register("phone")}
             errors={errors.phone}
           />

@@ -67,9 +67,9 @@ export const ModalEditPet = () => {
             errors={errors.city}
           />
           <Input
-            labelText="Telefone"
+            labelText="Contato"
             placeHolder={petPhone}
-            type="number"
+            type="text"
             register={register("phone")}
             errors={errors.phone}
           />

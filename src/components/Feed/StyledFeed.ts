@@ -24,6 +24,9 @@ export const StyledFeed = styled.section`
   fieldset {
     width: 100%;
     margin-bottom: 10px;
+    textarea {
+      color: var(--grey-0);
+    }
   }
 
   .text__input-area {

@@ -10,6 +10,9 @@ export const StyledPostCard = styled.div`
   color: var(--white-neutral);
   font-family: "Inter";
   font-weight: lighter;
+  h2 {
+    font-size: 18px;
+  }
   .user__container {
     display: flex;
     align-items: center;

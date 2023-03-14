@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import {
   IPostContext,
@@ -34,8 +35,10 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPostList([...postList, response.data]);
+      toast.success("Você criou um post com sucesso!");
     } catch (error) {
       console.log(error);
+      toast.error("Erro! Você não conseguiu criar um post");
     } finally {
       setLoading(false);
     }
@@ -50,7 +53,9 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
       const newPosts = postList.filter((post) => post.id !== id);
       setDeletePost(false);
       setPostList(newPosts);
+      toast.success("Você removeu seu post com sucesso!");
     } catch (error) {
+      toast.error("Erro! Você não conseguiu apagar seu post");
       // console.log(error);
     }
   };
