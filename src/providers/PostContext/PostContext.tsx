@@ -15,6 +15,7 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [postList, setPostList] = useState<IPostValue[]>([]);
   const [deletePost, setDeletePost] = useState(false);
+  const [deletePostId, setDeletePostId] = useState<Number>();
 
   const postLoad = async () => {
     try {
@@ -60,18 +61,32 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
   //   }
   // };
 
-  // const postRemove = async (id: IRemovePostFormValues) => {
-  //   try {
-  //     // const response = await api.delete(`addPath`, id.id)
-
-  //     const newPosts = postList.filter((post) => post.id !== id.id);
-  //     setPostList(newPosts);
-  //   } catch (error) {}
-  // };
+  const postRemove = async (id: IRemovePostFormValues) => {
+    const token = localStorage.getItem("@TOKEN");
+    try {
+      const response = await api.delete(`/posts/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      console.log(response);
+      // const newPosts = postList.filter((post) => post.id !== id.id);
+      // setPostList(newPosts);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <PostContext.Provider
-      value={{ postCreate, postList, postLoad, deletePost, setDeletePost }}
+      value={{
+        postCreate,
+        postList,
+        postLoad,
+        deletePost,
+        setDeletePost,
+        deletePostId,
+        setDeletePostId,
+        postRemove,
+      }}
     >
       {children}
     </PostContext.Provider>

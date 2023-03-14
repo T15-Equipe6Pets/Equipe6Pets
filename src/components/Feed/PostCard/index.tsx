@@ -5,10 +5,11 @@ import { PostContext } from "../../../providers/PostContext/PostContext";
 
 interface iPostCardPros {
   message: string;
+  id: number;
 }
 
-export function PostCard({ message }: iPostCardPros) {
-  const { setDeletePost } = useContext(PostContext);
+export function PostCard({ message, id }: iPostCardPros) {
+  const { setDeletePost, setDeletePostId } = useContext(PostContext);
 
   return (
     <StyledPostCard>
@@ -28,6 +29,7 @@ export function PostCard({ message }: iPostCardPros) {
           <button
             onClick={() => {
               setDeletePost(true);
+              setDeletePostId(id);
             }}
           >
             <img src={PostOptions} />

@@ -1,11 +1,13 @@
 export interface IPostContext {
   postCreate: (formData: ICreatePostFormValues) => Promise<void>;
   // postEdit: (formData: IEditPostFormValues) => Promise<void>;
-  // postRemove: (id: IRemovePostFormValues) => Promise<void>;
+  postRemove: (id: IRemovePostFormValues) => Promise<void>;
   postList: IPostValue[];
   postLoad: () => Promise<void>;
   setDeletePost: React.Dispatch<React.SetStateAction<boolean>>;
   deletePost: boolean;
+  setDeletePostId: React.Dispatch<React.SetStateAction<Number | undefined>>;
+  deletePostId: Number | undefined;
 }
 
 export interface IPostValue {
@@ -31,5 +33,5 @@ export interface IEditPostFormValues {
 }
 
 export interface IRemovePostFormValues {
-  id: string;
+  id: number | undefined;
 }

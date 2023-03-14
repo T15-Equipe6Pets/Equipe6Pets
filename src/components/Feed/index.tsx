@@ -39,7 +39,7 @@ export function Feed() {
       </form>
       <div>
         {postList.map((post) => (
-          <PostCard key={post.id} message={post.message} />
+          <PostCard id={post.id} key={post.id} message={post.message} />
         ))}
       </div>
     </StyledFeed>

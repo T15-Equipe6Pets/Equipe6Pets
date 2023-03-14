@@ -1,39 +1,37 @@
-import React from "react";
-import { Input } from "../../Input";
-import { TextTag } from "../../TextType/TextType";
-import { ThemeButton } from "../../ThemeButton/StyledButton";
-import { StyledCartModalBox } from "../styledModal";
+import { useContext } from "react";
+import { PostContext } from "../../../providers/PostContext/PostContext";
+import { StyledModalDeletePost } from "./StyleModalDeletePost";
 
 export const ModalDeletePost = () => {
+  const { setDeletePost, deletePostId, postRemove } = useContext(PostContext);
+
   return (
     <div>
-      <StyledCartModalBox>
-        <div>
+      <StyledModalDeletePost>
+        <div className="modal__container">
           <header>
-            <TextTag color="--grey-0" fontSize="14px">
-              Deletar Post
-            </TextTag>
-            <button>x</button>
+            <h1>Deletar Post</h1>
+            <button
+              onClick={() => {
+                setDeletePost(false);
+              }}
+            >
+              X
+            </button>
           </header>
-          <ThemeButton
-            backgroundColor="--color-primary"
-            color="--grey-0"
-            hoverBackground="--color-primary-focus"
-            type="submit"
-          >
-            Confirmar
-          </ThemeButton>
-          <ThemeButton
-            backgroundColor="--negative"
-            color="--grey-0"
-            hoverBackground="--negative-hover"
-            type="submit"
-          >
-            Cancelar
-          </ThemeButton>
-          <br />
+          <div>
+            <p>Desejar realmente excluir o post?</p>
+            <button
+              onClick={() => {
+                console.log(deletePostId);
+                postRemove(deletePostId);
+              }}
+            >
+              Confirmar
+            </button>
+          </div>
         </div>
-      </StyledCartModalBox>
+      </StyledModalDeletePost>
     </div>
   );
 };

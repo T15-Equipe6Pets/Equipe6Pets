@@ -8,13 +8,17 @@ import { ModalAddPet } from "../../components/Modal/ModalAddPet";
 import { useContext } from "react";
 import { LostPetContext } from "../../providers/LostPetContext/LostPetContext";
 import { ModalEditPet } from "../../components/Modal/ModalEditPet";
+import { ModalDeletePost } from "../../components/Modal/ModalDeletePost";
+import { PostContext } from "../../providers/PostContext/PostContext";
 
 export function Home() {
   const { modal, setModal, modalInfo } = useContext(LostPetContext);
+  const { deletePost } = useContext(PostContext);
   return (
     <StyledHome>
       {modal ? <ModalAddPet /> : null}
       {modalInfo ? <ModalEditPet id={event?.target.id} /> : null}
+      {deletePost ? <ModalDeletePost /> : null}
       <Header title={"Equipe6Pets"} />
       <main>
         <Feed />
