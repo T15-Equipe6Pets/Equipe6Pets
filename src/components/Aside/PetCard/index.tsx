@@ -1,16 +1,20 @@
 import { StyledPetCard } from "./StyledPetCard";
+export interface ILostPetValue {
+  nome: string;
+  cidade: string;
+  telefone: string;
+  imagem: string;
+  id: string;
+}
 
-export function PetCard() {
+export function PetCard({ nome, cidade, telefone, imagem, id }: ILostPetValue) {
   return (
-    <StyledPetCard>
-      <img
-        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-        alt=""
-      />
+    <StyledPetCard id={id}>
+      <img src={imagem} alt="" />
       <div>
-        <span>Nome: XXXX</span>
-        <span>Cidade: XXX</span>
-        <span>Telefone: (XX) X XXXX-XXXX</span>
+        <span>Nome: {nome} </span>
+        <span>Cidade:{cidade} </span>
+        <span>Telefone: {telefone} </span>
       </div>
     </StyledPetCard>
   );

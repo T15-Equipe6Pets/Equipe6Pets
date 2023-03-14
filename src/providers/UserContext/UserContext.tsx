@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import {
   IDefaultProviderProps,
@@ -32,8 +33,6 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
         navigate("/dashboard");
       } catch (error) {
         console.log(error);
-        localStorage.removeItem("@TOKEN");
-        localStorage.remove("@id");
       }
     }
   };
@@ -49,25 +48,32 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
       setUser(response.data.user);
       localStorage.setItem("@TOKEN", response.data.accessToken);
       localStorage.setItem("@id", response.data.user.id);
+      localStorage.setItem("@image", response.data.user.image);
+      localStorage.setItem("@nome", response.data.user.name);
       navigate("/home");
+      toast.success("Usuário registrado com sucesso!");
     } catch (error) {
       console.log(error);
+      toast.error("Algo deu errado!");
     } finally {
       setLoading(false);
     }
   };
   const userLogin = async (formData: ILoginFormValues) => {
-    console.log("estou aqui");
     try {
       setLoading(true);
       const response = await api.post("/login", formData);
       setUser(response.data.user);
       localStorage.setItem("@TOKEN", response.data.accessToken);
       localStorage.setItem("@id", response.data.user.id);
+      localStorage.setItem("@image", response.data.user.image);
+      localStorage.setItem("@nome", response.data.user.name);
       //  TOASTIFY
       navigate("/home");
+      toast.success("Usuário logado com sucesso!");
     } catch (error) {
       console.log(error);
+      toast.error("Algo deu errado!");
     } finally {
       setLoading(false);
     }

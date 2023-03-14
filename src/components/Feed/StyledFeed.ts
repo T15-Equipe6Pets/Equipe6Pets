@@ -6,44 +6,51 @@ export const StyledFeed = styled.section`
   border-radius: 16px;
   background-color: var(--grey-3);
 
-  .text__input-area {
-    max-height: 50px;
-    margin-bottom: 50px;
-
+  .texField {
+    width: 100%;
+    color: white;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  img {
+    width: 45px;
+    border-radius: 30px;
+  }
+  .field_Container {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+  }
+  fieldset {
+    width: 100%;
+    margin-bottom: 10px;
     textarea {
-      max-width: 700px;
-      width: 90%;
-      padding: 10px 0 0 10px;
-
-      resize: none;
-
-      outline: none;
-      font-family: "Inter";
-
-      background-color: var(--grey-2);
-      color: var(--grey-1);
-
-      border: 1px solid var(--grey-2);
-      border-radius: 4px;
-    }
-    textarea:focus {
-      border: 1px solid var(--grey-0);
       color: var(--grey-0);
+    }
+  }
+
+  .text__input-area {
+    display: flex;
+    flex-direction: column;
+    .cards_Container {
+      display: flex;
+      align-items: center;
+      width: 50%;
     }
     button {
-      width: 60px;
+      align-self: flex-end;
 
-      font-family: "Inter";
-      font-weight: 600;
-
-      color: var(--grey-0);
-      background-color: var(--color-primary);
+      padding: 5px 25px;
+      border: 1px solid var(--grey-1);
       border-radius: 4px;
+
+      color: var(--grey-1);
+      font-size: 14px;
+
+      margin-bottom: 30px;
     }
     button:hover {
-      background-color: var(--color-primary-focus);
+      color: var(--grey-0);
     }
   }
 `;

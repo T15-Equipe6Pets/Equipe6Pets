@@ -11,6 +11,7 @@ export const StyledCartModalBox = styled.div`
   left: 0;
   background: rgba(51, 51, 51, 0.5);
   gap: 10px;
+  z-index: 1000;
   .deleteBt {
     width: 70px;
   }
@@ -31,7 +32,7 @@ export const StyledCartModalBox = styled.div`
     margin-top: 20px;
     padding: 10px;
   }
-  > div {
+  > form {
     background-color: var(--grey-3);
     width: 300px;
     display: flex;

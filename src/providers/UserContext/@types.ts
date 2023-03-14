@@ -19,11 +19,16 @@ export interface IRegisterFormValues {
   confirmPassword: string;
   city: string;
   contact: string;
+  image: string;
 }
 
 export interface ILoginFormValues {
   email: string;
   password: string;
+}
+
+export interface ITextPost {
+  text: string;
 }
 
 export interface IUserContext {
