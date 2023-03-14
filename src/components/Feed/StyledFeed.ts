@@ -12,16 +12,26 @@ export const StyledFeed = styled.section`
     padding: 15px;
   }
   .text__input-area {
-    textarea {
-      color: var(--grey-0);
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      img {
+        width: 45px;
+        border-radius: 30px;
+      }
     }
-    position: relative;
     button {
-      position: absolute;
-      bottom: 20px;
-      right: 15px;
+      align-self: flex-end;
+
+      padding: 5px 25px;
+      border: 1px solid var(--grey-1);
+      border-radius: 4px;
+
       color: var(--grey-1);
-      font-size: 18px;
+      font-size: 14px;
     }
     button:hover {
       color: var(--grey-0);
