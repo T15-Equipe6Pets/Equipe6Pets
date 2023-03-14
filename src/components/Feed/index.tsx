@@ -26,7 +26,7 @@ export function Feed() {
   } = useForm<ITextPost>();
 
   const submit = (formData: iSubmit) => {
-    const userId = parseInt(localStorage.getItem("@id"));
+    const userId = localStorage.getItem("@id");
     const data = { message: formData.text, userId: userId };
     postCreate(data);
   };
@@ -34,7 +34,7 @@ export function Feed() {
   return (
     <StyledFeed>
       <form onSubmit={handleSubmit(submit)} className="text__input-area">
-        <div>
+        <div className="field_Container">
           <img
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
             alt=""
@@ -43,7 +43,7 @@ export function Feed() {
         </div>
         <button type="submit">Post</button>
       </form>
-      <div>
+      <div className="cards_Container">
         {postList.map((post) => (
           <PostCard id={post.id} key={post.id} message={post.message} />
         ))}

@@ -32,6 +32,7 @@ export function Register() {
       .oneOf([yup.ref("password")], "As senhas devem ser idênticas"),
     city: yup.string().required("Cidade onde mora obrigatória"),
     contact: yup.string().required("Contato obrigatório"),
+    image: yup.string().required("Foto obrigatória"),
   });
 
   const { userRegister } = useContext(UserContext);
@@ -95,6 +96,13 @@ export function Register() {
             type="text"
             register={register("contact")}
             errors={errors.contact}
+          />
+          <Input
+            labelText="Imagem"
+            placeHolder="Foto de Perfil"
+            type="text"
+            register={register("image")}
+            errors={errors.image}
           />
           <ThemeButton
             backgroundColor="--color-primary"
