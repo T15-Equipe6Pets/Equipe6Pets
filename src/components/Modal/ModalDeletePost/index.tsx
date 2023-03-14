@@ -23,7 +23,6 @@ export const ModalDeletePost = () => {
             <p>Desejar realmente excluir o post?</p>
             <button
               onClick={() => {
-                console.log(deletePostId);
                 postRemove(deletePostId);
               }}
             >
