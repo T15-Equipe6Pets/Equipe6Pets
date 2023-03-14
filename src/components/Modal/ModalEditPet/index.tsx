@@ -21,10 +21,11 @@ export const ModalEditPet = () => {
   } = useContext(LostPetContext);
 
   const formSchema = yup.object().shape({
-    name: yup.string().required("Nome Obrigatório"),
-    city: yup.string().required("Cidade onde mora obrigatória"),
-    phone: yup.string().required("Contato obrigatório"),
+    name: yup.string().required(),
+    city: yup.string().required(),
+    phone: yup.string().required(),
   });
+
   function submit(formData: ICreateLostPetFormValues) {
     lostPetEdit(formData);
     setModalInfo(false);
@@ -36,9 +37,9 @@ export const ModalEditPet = () => {
   } = useForm<ICreateLostPetFormValues>({ resolver: yupResolver(formSchema) });
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
+    <div>
       <StyledCartModalBox>
-        <div id={`${petId}`}>
+        <form id={`${petId}`} onSubmit={handleSubmit(submit)}>
           <header>
             <TextTag color="--grey-0" fontSize="14px">
               Editar Pet Perdido
@@ -94,8 +95,8 @@ export const ModalEditPet = () => {
               Excluir
             </ThemeButton>
           </div>
-        </div>
+        </form>
       </StyledCartModalBox>
-    </form>
+    </div>
   );
 };
