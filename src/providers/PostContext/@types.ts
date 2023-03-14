@@ -14,6 +14,7 @@ export interface IPostValue {
   message: string;
   id: number;
   userId: number;
+  date: string;
 }
 
 export interface IDefaultProviderProps {
@@ -24,6 +25,7 @@ export interface ICreatePostFormValues {
   data: {
     message: string;
     userId: number;
+    date: string;
   };
 }
 

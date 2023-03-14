@@ -33,8 +33,6 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
       const response = await api.post("/posts", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log(response.data);
-      console.log(postList);
       setPostList([...postList, response.data]);
     } catch (error) {
       console.log(error);
