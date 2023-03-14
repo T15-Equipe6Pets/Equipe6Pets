@@ -31,7 +31,7 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
         setUser(response.data);
         navigate("/dashboard");
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     }
   };
