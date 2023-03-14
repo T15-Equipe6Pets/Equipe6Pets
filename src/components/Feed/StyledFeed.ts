@@ -5,6 +5,7 @@ export const StyledFeed = styled.section`
   padding: 20px;
   border-radius: 16px;
   background-color: var(--grey-3);
+
   .texField {
     width: 100%;
     color: white;
@@ -42,6 +43,8 @@ export const StyledFeed = styled.section`
 
       color: var(--grey-1);
       font-size: 14px;
+
+      margin-bottom: 30px;
     }
     button:hover {
       color: var(--grey-0);
