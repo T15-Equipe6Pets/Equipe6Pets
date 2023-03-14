@@ -36,9 +36,9 @@ export const ModalEditPet = () => {
   } = useForm<ICreateLostPetFormValues>({ resolver: yupResolver(formSchema) });
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
+    <div>
       <StyledCartModalBox>
-        <div id={`${petId}`}>
+        <form id={`${petId}`} onSubmit={handleSubmit(submit)}>
           <header>
             <TextTag color="--grey-0" fontSize="14px">
               Editar Pet Perdido
@@ -94,8 +94,8 @@ export const ModalEditPet = () => {
               Excluir
             </ThemeButton>
           </div>
-        </div>
+        </form>
       </StyledCartModalBox>
-    </form>
+    </div>
   );
 };
