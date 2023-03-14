@@ -33,7 +33,9 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
       const response = await api.post("/posts", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      setPostList([...postList, response.data.message]);
+      console.log(response.data);
+      console.log(postList);
+      setPostList([...postList, response.data]);
     } catch (error) {
       console.log(error);
     } finally {
@@ -67,11 +69,11 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
       const response = await api.delete(`/posts/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log(response);
-      // const newPosts = postList.filter((post) => post.id !== id.id);
-      // setPostList(newPosts);
+      const newPosts = postList.filter((post) => post.id !== id);
+      setDeletePost(false);
+      setPostList(newPosts);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

@@ -21,10 +21,11 @@ export const ModalEditPet = () => {
   } = useContext(LostPetContext);
 
   const formSchema = yup.object().shape({
-    name: yup.string().required("Nome Obrigatório"),
-    city: yup.string().required("Cidade onde mora obrigatória"),
-    phone: yup.string().required("Contato obrigatório"),
+    name: yup.string().required(),
+    city: yup.string().required(),
+    phone: yup.string().required(),
   });
+
   function submit(formData: ICreateLostPetFormValues) {
     lostPetEdit(formData);
     setModalInfo(false);

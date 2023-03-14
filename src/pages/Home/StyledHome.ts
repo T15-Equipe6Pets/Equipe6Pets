@@ -20,5 +20,9 @@ export const StyledHome = styled.div`
       flex-direction: column;
       gap: 20px;
     }
+    aside {
+      width: 100%;
+      align-self: center;
+    }
   }
 `;

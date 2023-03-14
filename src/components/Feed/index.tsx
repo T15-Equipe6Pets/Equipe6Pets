@@ -34,8 +34,14 @@ export function Feed() {
   return (
     <StyledFeed>
       <form onSubmit={handleSubmit(submit)} className="text__input-area">
-        <InputText register={register("text")} />
-        <button type="submit">Postar</button>
+        <div>
+          <img
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+            alt=""
+          />
+          <InputText register={register("text")} />
+        </div>
+        <button type="submit">Post</button>
       </form>
       <div>
         {postList.map((post) => (
