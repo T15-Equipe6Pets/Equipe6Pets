@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { api } from "../../services/api";
+import { toast } from "react-toastify";
 import {
   ICreateLostPetFormValues,
   IDefaultProviderProps,
@@ -38,7 +39,6 @@ export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
     const token = localStorage.getItem("@TOKEN");
     const userId = localStorage.getItem("@id");
     try {
-      console.log({ ...formData, userId });
       setLoading(true);
       const response = await api.post(
         "/pets",
@@ -49,20 +49,20 @@ export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
           },
         }
       );
-      console.log("response.data");
+
       setLostPetList([...lostPetList, response.data.user]);
       setModal(false);
       window.location.reload();
+      toast.success("Pet registrado com sucesso!");
     } catch (error) {
       console.log(error);
+      toast.error("Algo deu errado!");
     } finally {
       setLoading(false);
     }
   };
 
   const lostPetEdit = async (formData: IEditLostPetFormValues) => {
-    console.log(formData);
-
     const token = localStorage.getItem("@TOKEN");
     try {
       const response = await api.patch(`/pets/${petId}`, formData, {
@@ -71,8 +71,10 @@ export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
         },
       });
       loadPetList();
+      toast.success("Dados alterados!");
     } catch (error) {
       console.log(error);
+      toast.error("Algo deu errado!");
     } finally {
       setLoading(false);
     }
@@ -86,8 +88,9 @@ export const LostPetProvider = ({ children }: IDefaultProviderProps) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log("response.data");
+
       loadPetList();
+      toast.success("Pet deletado!");
     } catch (error) {
       console.log(error);
     }

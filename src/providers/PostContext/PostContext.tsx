@@ -33,8 +33,7 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
       const response = await api.post("/posts", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log(response.data);
-      console.log(postList);
+
       setPostList([...postList, response.data]);
     } catch (error) {
       console.log(error);
@@ -42,26 +41,6 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
       setLoading(false);
     }
   };
-
-  // const postEdit = async (formData: IEditPostFormValues) => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await api.patch("addPath", formData);
-
-  //     const newPostsList = postList.map((post) => {
-  //       if (formData.id === post.id) {
-  //         return { ...post, ...formData };
-  //       } else {
-  //         return post;
-  //       }
-  //     });
-  //     setPostList(newPostsList);
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   const postRemove = async (id: IRemovePostFormValues) => {
     const token = localStorage.getItem("@TOKEN");

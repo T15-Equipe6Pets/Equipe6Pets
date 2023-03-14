@@ -9,6 +9,8 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext/UserContext";
 import { IRegisterFormValues } from "../../providers/UserContext/@types";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { api } from "../../services/api";
 
 export function Register() {
@@ -45,6 +47,7 @@ export function Register() {
 
   return (
     <StyledRegister>
+      <ToastContainer />
       <header>
         <div className="header_Container">
           <ThemeH1 color="--color-primary">Equipe6Pets</ThemeH1>
