@@ -11,17 +11,27 @@ export const StyledFeed = styled.section`
     margin: 0 auto;
     padding: 15px;
   }
+  img {
+    width: 45px;
+    border-radius: 30px;
+  }
+  .field_Container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  fieldset {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
   .text__input-area {
     display: flex;
     flex-direction: column;
-    div {
+    .cards_Container {
       display: flex;
       align-items: center;
       width: 50%;
-      img {
-        width: 45px;
-        border-radius: 30px;
-      }
     }
     button {
       align-self: flex-end;
