@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { PostContext } from "../../providers/PostContext/PostContext";
 import { ITextPost } from "../../providers/UserContext/@types";
 import { InputText } from "../Input";
+import { ModalDeletePost } from "../Modal/ModalDeletePost";
 // COMPONENTS
 import { PostCard } from "./PostCard";
 import { StyledFeed } from "./StyledFeed";
@@ -30,8 +31,6 @@ export function Feed() {
     postCreate(data);
   };
 
-  console.log(postList);
-
   return (
     <StyledFeed>
       <form onSubmit={handleSubmit(submit)} className="text__input-area">
@@ -40,7 +39,7 @@ export function Feed() {
       </form>
       <div>
         {postList.map((post) => (
-          <PostCard key={post.id} message={post.message} />
+          <PostCard id={post.id} key={post.id} message={post.message} />
         ))}
       </div>
     </StyledFeed>
