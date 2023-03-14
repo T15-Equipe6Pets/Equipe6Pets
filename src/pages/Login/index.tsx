@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 import { Input } from "../../components/Input";
 
@@ -37,6 +39,7 @@ export const Login = () => {
 
   return (
     <StyledContainerLogin>
+      <ToastContainer />
       <header>
         <div className="header_Container">
           <ThemeH1 color="--color-primary">Equipe6Pets</ThemeH1>

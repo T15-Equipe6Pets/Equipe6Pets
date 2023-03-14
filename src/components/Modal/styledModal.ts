@@ -11,6 +11,7 @@ export const StyledCartModalBox = styled.div`
   left: 0;
   background: rgba(51, 51, 51, 0.5);
   gap: 10px;
+  z-index: 1000;
   .deleteBt {
     width: 70px;
   }

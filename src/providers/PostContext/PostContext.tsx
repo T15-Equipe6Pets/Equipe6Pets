@@ -41,26 +41,6 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
     }
   };
 
-  // const postEdit = async (formData: IEditPostFormValues) => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await api.patch("addPath", formData);
-
-  //     const newPostsList = postList.map((post) => {
-  //       if (formData.id === post.id) {
-  //         return { ...post, ...formData };
-  //       } else {
-  //         return post;
-  //       }
-  //     });
-  //     setPostList(newPostsList);
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
   const postRemove = async (id: IRemovePostFormValues) => {
     const token = localStorage.getItem("@TOKEN");
     try {
