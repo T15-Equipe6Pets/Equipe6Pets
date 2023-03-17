@@ -28,7 +28,9 @@ interface ICreatePostData {
 }
 
 export interface ICreatePostFormValues {
-  data: ICreatePostData;
+  message: string;
+  userId: string | null;
+  date: string;
 }
 
 export interface IEditPostFormValues {
