@@ -21,12 +21,14 @@ export interface IDefaultProviderProps {
   children: React.ReactNode;
 }
 
+interface ICreatePostData {
+  message: string;
+  userId: string | null;
+  date: string;
+}
+
 export interface ICreatePostFormValues {
-  data?: {
-    message: string;
-    userId: number;
-    date: string;
-  };
+  data: ICreatePostData;
 }
 
 export interface IEditPostFormValues {
