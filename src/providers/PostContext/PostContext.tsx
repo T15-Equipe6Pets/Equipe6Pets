@@ -16,7 +16,7 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [postList, setPostList] = useState<IPostValue[]>([]);
   const [deletePost, setDeletePost] = useState(false);
-  const [deletePostId, setDeletePostId] = useState<Number>();
+  const [deletePostId, setDeletePostId] = useState<Number>(0);
 
   const postLoad = async () => {
     try {
@@ -47,10 +47,10 @@ export const PostProvider = ({ children }: IDefaultProviderProps) => {
   const postRemove = async (id: IRemovePostFormValues) => {
     const token = localStorage.getItem("@TOKEN");
     try {
-      const response = await api.delete(`/posts/${id}`, {
+      const response = await api.delete(`/posts/${id.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      const newPosts = postList.filter((post) => post.id !== id);
+      const newPosts = postList.filter((post) => post.id !== id.id);
       setDeletePost(false);
       setPostList(newPosts);
       toast.success("Você removeu seu post com sucesso!");

@@ -6,8 +6,8 @@ export interface IPostContext {
   postLoad: () => Promise<void>;
   setDeletePost: React.Dispatch<React.SetStateAction<boolean>>;
   deletePost: boolean;
-  setDeletePostId: React.Dispatch<React.SetStateAction<Number | undefined>>;
-  deletePostId: Number | undefined;
+  setDeletePostId: React.Dispatch<React.SetStateAction<Number>>;
+  deletePostId: Number;
 }
 
 export interface IPostValue {
@@ -39,5 +39,5 @@ export interface IEditPostFormValues {
 }
 
 export interface IRemovePostFormValues {
-  id: number | undefined;
+  id: Number;
 }
