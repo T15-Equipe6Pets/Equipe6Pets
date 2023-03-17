@@ -22,7 +22,7 @@ export interface IDefaultProviderProps {
 }
 
 export interface ICreatePostFormValues {
-  data: {
+  data?: {
     message: string;
     userId: number;
     date: string;
