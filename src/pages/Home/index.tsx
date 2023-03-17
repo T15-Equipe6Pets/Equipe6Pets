@@ -17,7 +17,7 @@ export function Home() {
   return (
     <StyledHome>
       {modal ? <ModalAddPet /> : null}
-      {modalInfo ? <ModalEditPet id={event?.target.id} /> : null}
+      {modalInfo ? <ModalEditPet /> : null}
       {deletePost ? <ModalDeletePost /> : null}
       <Header title={"Equipe6Pets"} />
       <main>
